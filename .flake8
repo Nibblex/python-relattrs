@@ -1,0 +1,11 @@
+[flake8]
+ignore =
+    E501
+    W503
+exclude =
+    .git
+    .tox
+    .vscode
+    venv
+per-file-ignores =
+    __init__.py:F401
