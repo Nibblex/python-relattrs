@@ -1,5 +1,5 @@
 python-relattrs
-========
+===============
 
 `relattrs` is a small utility library for recursively getting, setting, checking, and deleting attributes of an object using a dotted string representation. This can be particularly useful when dealing with nested objects.
 
