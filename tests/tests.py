@@ -24,7 +24,7 @@ def container():
     return Container()
 
 
-separators = [".", "__", " "]
+separators = [".", "__", "|", " "]
 
 
 @pytest.mark.parametrize("sep", separators)
