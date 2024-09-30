@@ -1,6 +1,6 @@
 import pytest
 
-from relattrs.relattrs import rdelattr, rgetattr, rhasattr, rsetattr
+from relattrs import rdelattr, rgetattr, rhasattr, rsetattr
 
 
 class Inner:
@@ -40,10 +40,14 @@ separators = [".", "__", "|", " "]
 def test_rgetattr(container, sep, attr_path, expected):
     attr_path = sep.join(attr_path)
     if expected is AttributeError:
+        # with default value
+        assert rgetattr(container, attr_path, "default", sep=sep) == "default"
+
+        # whitout default value
         with pytest.raises(AttributeError):
-            rgetattr(container, attr_path, sep)
+            rgetattr(container, attr_path, sep=sep)
     else:
-        assert rgetattr(container, attr_path, sep) == expected
+        assert rgetattr(container, attr_path, sep=sep) == expected
 
 
 @pytest.mark.parametrize("sep", separators)
@@ -73,8 +77,8 @@ def test_rhasattr(container, sep, attr_path, expected):
 )
 def test_rsetattr(container, sep, attr_path, value):
     attr_path = sep.join(attr_path)
-    rsetattr(container, attr_path, value, sep)
-    assert rgetattr(container, attr_path, sep) == value
+    rsetattr(container, attr_path, value, sep=sep)
+    assert rgetattr(container, attr_path, sep=sep) == value
 
 
 @pytest.mark.parametrize("sep", separators)

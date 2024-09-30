@@ -59,6 +59,20 @@ Recursively gets an attribute from an object based on a dotted string representa
     obj = A()
     print(rgetattr(obj, "B|C|value", sep="|"))  # Output: 1
 
+**Example with `default` parameter:**
+
+.. code-block:: python
+
+    from relattrs import rgetattr
+
+    class A:
+        class B:
+            class C:
+                value = 1
+
+    obj = A()
+    print(rgetattr(obj, "B.C.val", "Not found"))  # Output: Not found
+
 ### rhasattr
 
 Recursively checks if an object has an attribute based on a dotted string representation.
