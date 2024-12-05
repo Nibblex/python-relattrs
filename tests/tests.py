@@ -106,7 +106,3 @@ def test_rdelattr(container, sep, attr_path):
     assert rhasattr(container, temp_attr, sep)
     rdelattr(container, temp_attr, sep)
     assert not rhasattr(container, temp_attr, sep)
-
-
-if __name__ == "__main__":
-    pytest.main()
