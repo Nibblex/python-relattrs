@@ -1,6 +1,6 @@
 build
-flake8
-pytest
 pre-commit
+pytest
+ruff
 tox
 twine

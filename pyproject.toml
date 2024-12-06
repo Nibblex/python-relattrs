@@ -5,16 +5,6 @@ build-backend = "setuptools.build_meta"
 [tool.ruff]
 line-length = 90
 
-[tool.black]
-line-length = 90
-exclude = '''
-/(
-    \.git
-  | \.venv
-  | migrations
-)/
-'''
-
 [tool.isort]
 profile = "black"
 known_django = ["django"]
