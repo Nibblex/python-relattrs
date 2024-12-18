@@ -3,14 +3,17 @@ python-relattrs
 .. image:: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json
     :target: https://github.com/astral-sh/ruff
     :alt: Ruff
+.. image:: https://results.pre-commit.ci/badge/github/Nibblex/python-relattrs/main.svg
+   :target: https://results.pre-commit.ci/latest/github/Nibblex/python-relattrs/main
+   :alt: pre-commit.ci status
 ===============
 
-`relattrs` is a small utility library for recursively getting, setting, checking, and deleting attributes of an object using a dotted string representation. This can be particularly useful when dealing with nested objects.
+*relattrs* is a small utility library for recursively getting, setting, checking, and deleting attributes of an object using a dotted string representation. This can be particularly useful when dealing with nested objects.
 
 Installation
 ------------
 
-You can install `relattrs` via pip:
+You can install *relattrs* via pip:
 
 .. code-block:: bash
 
@@ -21,10 +24,10 @@ Functions
 
 The library provides four main functions:
 
-- `rgetattr`: Recursively gets an attribute from an object.
-- `rhasattr`: Recursively checks if an attribute exists on an object.
-- `rsetattr`: Recursively sets an attribute on an object.
-- `rdelattr`: Recursively deletes an attribute from an object.
+- *rgetattr*: Recursively gets an attribute from an object.
+- *rhasattr*: Recursively checks if an attribute exists on an object.
+- *rsetattr*: Recursively sets an attribute on an object.
+- *rdelattr*: Recursively deletes an attribute from an object.
 
 Usage
 -----
@@ -49,7 +52,7 @@ Recursively gets an attribute from an object based on a dotted string representa
     obj = A()
     print(rgetattr(obj, "B.C.value"))  # Output: 1
 
-**Example with `sep` parameter:**
+**Example with *sep* parameter:**
 
 .. code-block:: python
 
@@ -63,7 +66,7 @@ Recursively gets an attribute from an object based on a dotted string representa
     obj = A()
     print(rgetattr(obj, "B|C|value", sep="|"))  # Output: 1
 
-**Example with `default` parameter:**
+**Example with *default* parameter:**
 
 .. code-block:: python
 
@@ -96,7 +99,7 @@ Recursively checks if an object has an attribute based on a dotted string repres
     print(rhasattr(obj, "B.C.value"))  # Output: True
     print(rhasattr(obj, "B.C.val"))    # Output: False
 
-**Example with `sep` parameter:**
+**Example with *sep* parameter:**
 
 .. code-block:: python
 
@@ -130,7 +133,7 @@ Recursively sets an attribute on an object based on a dotted string representati
     rsetattr(obj, "B.C.value", 2)
     print(obj.B.C.value)  # Output: 2
 
-**Example with `sep` parameter:**
+**Example with *sep* parameter:**
 
 .. code-block:: python
 
@@ -164,7 +167,7 @@ Recursively deletes an attribute from an object based on a dotted string represe
     rdelattr(obj, "B.C.value")
     print(rhasattr(obj, "B.C.value"))  # Output: False
 
-**Example with `sep` parameter:**
+**Example with *sep* parameter:**
 
 .. code-block:: python
 
