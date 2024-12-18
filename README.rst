@@ -1,11 +1,13 @@
 python-relattrs
 ===============
 .. image:: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json
-    :target: https://github.com/astral-sh/ruff
-    :alt: Ruff
+  :target: https://github.com/astral-sh/ruff
+  :alt: Ruff
 .. image:: https://results.pre-commit.ci/badge/github/Nibblex/python-relattrs/main.svg
-   :target: https://results.pre-commit.ci/latest/github/Nibblex/python-relattrs/main
-   :alt: pre-commit.ci status
+  :target: https://results.pre-commit.ci/latest/github/Nibblex/python-relattrs/main
+  :alt: pre-commit.ci status
+.. image:: https://codecov.io/gh/Nibblex/python-relattrs/graph/badge.svg?token=JL8M6865RB
+  :target: https://codecov.io/gh/Nibblex/python-relattrs
 ===============
 
 *relattrs* is a small utility library for recursively getting, setting, checking, and deleting attributes of an object using a dotted string representation. This can be particularly useful when dealing with nested objects.
