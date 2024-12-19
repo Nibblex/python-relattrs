@@ -8,6 +8,8 @@ python-relattrs
   :alt: pre-commit.ci status
 .. image:: https://codecov.io/gh/Nibblex/python-relattrs/graph/badge.svg?token=JL8M6865RB
   :target: https://codecov.io/gh/Nibblex/python-relattrs
+.. image:: https://img.shields.io/pypi/pyversions/relattrs
+   :alt: PyPI - Python Version
 ===============
 
 *relattrs* is a small utility library for recursively getting, setting, checking, and deleting attributes of an object using a dotted string representation. This can be particularly useful when dealing with nested objects.
@@ -34,9 +36,7 @@ The library provides four main functions:
 Usage
 -----
 
-Here's how you can use each function:
-
-### rgetattr
+**rgetattr**
 
 Recursively gets an attribute from an object based on a dotted string representation.
 
@@ -82,7 +82,7 @@ Recursively gets an attribute from an object based on a dotted string representa
     obj = A()
     print(rgetattr(obj, "B.C.val", "Not found"))  # Output: Not found
 
-### rhasattr
+**rhasattr**
 
 Recursively checks if an object has an attribute based on a dotted string representation.
 
@@ -116,7 +116,7 @@ Recursively checks if an object has an attribute based on a dotted string repres
     print(rhasattr(obj, "B|C|value", sep="|"))  # Output: True
     print(rhasattr(obj, "B|C|val", sep="|"))    # Output: False
 
-### rsetattr
+**rsetattr**
 
 Recursively sets an attribute on an object based on a dotted string representation.
 
@@ -150,7 +150,7 @@ Recursively sets an attribute on an object based on a dotted string representati
     rsetattr(obj, "B|C|value", 2, sep="|")
     print(obj.B.C.value)  # Output: 2
 
-### rdelattr
+**rdelattr**
 
 Recursively deletes an attribute from an object based on a dotted string representation.
 
