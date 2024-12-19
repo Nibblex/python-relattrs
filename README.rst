@@ -8,6 +8,8 @@ python-relattrs
   :alt: pre-commit.ci status
 .. image:: https://codecov.io/gh/Nibblex/python-relattrs/graph/badge.svg?token=JL8M6865RB
   :target: https://codecov.io/gh/Nibblex/python-relattrs
+.. image:: https://img.shields.io/pypi/l/relattrs
+   :alt: PyPI - License
 .. image:: https://img.shields.io/pypi/pyversions/relattrs
    :alt: PyPI - Python Version
 ===============
