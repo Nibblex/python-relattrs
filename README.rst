@@ -1,20 +1,31 @@
-python-relattrs
-===============
-.. image:: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json
-  :target: https://github.com/astral-sh/ruff
-  :alt: Ruff
-.. image:: https://results.pre-commit.ci/badge/github/Nibblex/python-relattrs/main.svg
-  :target: https://results.pre-commit.ci/latest/github/Nibblex/python-relattrs/main
-  :alt: pre-commit.ci status
-.. image:: https://codecov.io/gh/Nibblex/python-relattrs/graph/badge.svg?token=JL8M6865RB
-  :target: https://codecov.io/gh/Nibblex/python-relattrs
-.. image:: https://img.shields.io/pypi/l/relattrs
-   :alt: PyPI - License
 .. image:: https://img.shields.io/pypi/pyversions/relattrs
+   :target: https://www.python.org/
    :alt: PyPI - Python Version
+.. image:: https://img.shields.io/pypi/v/relattrs?color=blue
+   :target: https://pypi.org/project/relattrs/
+   :alt: PyPI - Version
+.. image:: https://results.pre-commit.ci/badge/github/Nibblex/python-relattrs/main.svg
+   :target: https://results.pre-commit.ci/latest/github/Nibblex/python-relattrs/main
+   :alt: pre-commit.ci status
+.. image:: https://codecov.io/gh/Nibblex/python-relattrs/graph/badge.svg?token=JL8M6865RB
+   :target: https://codecov.io/gh/Nibblex/python-relattrs
+.. image:: https://img.shields.io/pypi/l/relattrs
+   :target: https://github.com/Nibblex/python-relattrs/blob/main/LICENSE
+   :alt: PyPI - License
+.. image:: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json
+   :target: https://github.com/astral-sh/ruff
+   :alt: Ruff
+python-relattrs
 ===============
 
 *relattrs* is a small utility library for recursively getting, setting, checking, and deleting attributes of an object using a dotted string representation. This can be particularly useful when dealing with nested objects.
+
+The library provides four main functions:
+
+- *rgetattr*: Recursively gets an attribute from an object.
+- *rhasattr*: Recursively checks if an attribute exists on an object.
+- *rsetattr*: Recursively sets an attribute on an object.
+- *rdelattr*: Recursively deletes an attribute from an object.
 
 Installation
 ------------
@@ -24,16 +35,6 @@ You can install *relattrs* via pip:
 .. code-block:: bash
 
     pip install relattrs
-
-Functions
----------
-
-The library provides four main functions:
-
-- *rgetattr*: Recursively gets an attribute from an object.
-- *rhasattr*: Recursively checks if an attribute exists on an object.
-- *rsetattr*: Recursively sets an attribute on an object.
-- *rdelattr*: Recursively deletes an attribute from an object.
 
 Usage
 -----
