@@ -1,15 +1,4 @@
 repos:
-  - repo: local
-    hooks:
-      - id: twine-check
-        name: Twine Check
-        entry: bash -c "rm -rf dist build && python -m build && twine check dist/*"
-        language: python
-        pass_filenames: false
-        additional_dependencies:
-          - build
-          - twine
-
   - repo: https://github.com/pre-commit/pygrep-hooks
     rev: v1.10.0
     hooks:
