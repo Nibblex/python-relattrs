@@ -15,6 +15,7 @@
 .. image:: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json
    :target: https://github.com/astral-sh/ruff
    :alt: Ruff
+
 python-relattrs
 ===============
 
@@ -28,7 +29,7 @@ The library provides four main functions:
 - *rdelattr*: Recursively deletes an attribute from an object.
 
 Installation
-------------
+============
 
 You can install *relattrs* via pip:
 
@@ -37,7 +38,7 @@ You can install *relattrs* via pip:
     pip install relattrs
 
 Usage
------
+=====
 
 **rgetattr**
 
@@ -188,6 +189,6 @@ Recursively deletes an attribute from an object based on a dotted string represe
     print(rhasattr(obj, "B|C|value", sep="|"))  # Output: False
 
 License
--------
+=======
 
 This project is licensed under the MIT License.
