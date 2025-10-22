@@ -29,7 +29,7 @@ separators = [".", "__", "|", " "]
 
 @pytest.mark.parametrize("sep", separators)
 @pytest.mark.parametrize(
-    "attr_path, expected",
+    ("attr_path", "expected"),
     [
         (["outer", "inner", "value"], 42),
         (["outer", "inner", "non_existent"], AttributeError),
@@ -52,7 +52,7 @@ def test_rgetattr(container, sep, attr_path, expected):
 
 @pytest.mark.parametrize("sep", separators)
 @pytest.mark.parametrize(
-    "attr_path, expected",
+    ("attr_path", "expected"),
     [
         (["outer", "inner", "value"], True),
         (["outer", "inner", "non_existent"], False),
@@ -67,7 +67,7 @@ def test_rhasattr(container, sep, attr_path, expected):
 
 @pytest.mark.parametrize("sep", separators)
 @pytest.mark.parametrize(
-    "attr_path, value",
+    ("attr_path", "value"),
     [
         (["outer", "inner", "value"], 100),
         (["outer", "inner", "new_attr"], "test"),
@@ -106,3 +106,20 @@ def test_rdelattr(container, sep, attr_path):
     assert rhasattr(container, temp_attr, sep)
     rdelattr(container, temp_attr, sep)
     assert not rhasattr(container, temp_attr, sep)
+
+
+def test_rhasattr_with_nonexistent_intermediate():
+    """Test that rhasattr returns False for non-existent intermediate attrs."""
+    container = Container()
+    # Should return False, not raise AttributeError
+    assert rhasattr(container, "nonexistent.value") is False
+    assert rhasattr(container, "nonexistent.nested.value") is False
+    assert rhasattr(container, "outer.nonexistent.value") is False
+
+
+def test_rgetattr_with_empty_string():
+    """Test that rgetattr handles empty string correctly."""
+    container = Container()
+    # Empty string should return the object itself or default value
+    result = rgetattr(container, "", "default")
+    assert result == "default" or result is container
