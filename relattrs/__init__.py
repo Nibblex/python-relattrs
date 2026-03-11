@@ -4,22 +4,19 @@ from typing import Any, Optional
 
 def rgetattr(obj: object, rattr: str, *default, sep: Optional[str] = None) -> Any:
     """
-    Recursively gets an attribute from an object based on a dotted string
-    representation.
+    Recursively gets an attribute from an object based on a dotted string representation.
 
     Args:
         obj: The object from which to retrieve the attribute.
         rattr: The dotted string representation of the attribute to retrieve.
         default: The default value to return if the attribute does not exist.
-        sep: The separator used to split the string representation.
-            Defaults to '.' (dot).
+        sep: The separator used to split the string representation. Defaults to '.' (dot).
 
     Returns:
         Any: The value of the attribute.
 
     Raises:
-        AttributeError: If the attribute does not exist and no default value
-            is provided.
+        AttributeError: If the attribute does not exist and no default value is provided.
 
     Example:
         >>> from relattrs import rgetattr
@@ -44,14 +41,12 @@ def rgetattr(obj: object, rattr: str, *default, sep: Optional[str] = None) -> An
 
 def rhasattr(obj: object, rattr: str, sep: Optional[str] = None) -> bool:
     """
-    Recursively checks if an object has an attribute based on a dotted
-    string representation.
+    Recursively checks if an object has an attribute based on a dotted string representation.
 
     Args:
         obj: The object to check.
         rattr: The dotted string representation of the attribute to check.
-        sep: The separator used to split the string representation.
-            Defaults to '.' (dot).
+        sep: The separator used to split the string representation. Defaults to '.' (dot).
 
     Returns:
         bool: True if the attribute exists, False otherwise.
@@ -79,15 +74,13 @@ def rhasattr(obj: object, rattr: str, sep: Optional[str] = None) -> bool:
 
 def rsetattr(obj: object, rattr: str, val: Any, sep: Optional[str] = None) -> None:
     """
-    Recursively sets an attribute on an object based on a dotted string
-    representation.
+    Recursively sets an attribute on an object based on a dotted string representation.
 
     Args:
         obj: The object on which to set the attribute.
         rattr: The dotted string representation of the attribute to set.
         val: The value to set.
-        sep: The separator used to split the string representation.
-            Defaults to '.' (dot).
+        sep: The separator used to split the string representation. Defaults to '.' (dot).
 
     Example:
         >>> from relattrs import rsetattr
@@ -108,14 +101,12 @@ def rsetattr(obj: object, rattr: str, val: Any, sep: Optional[str] = None) -> No
 
 def rdelattr(obj: object, rattr: str, sep: Optional[str] = None) -> None:
     """
-    Recursively deletes an attribute from an object based on a dotted
-    string representation.
+    Recursively deletes an attribute from an object based on a dotted string representation.
 
     Args:
         obj: The object from which to delete the attribute.
         rattr: The dotted string representation of the attribute to delete.
-        sep: The separator used to split the string representation.
-            Defaults to '.' (dot).
+        sep: The separator used to split the string representation. Defaults to '.' (dot).
 
     Example:
         >>> from relattrs import rdelattr
