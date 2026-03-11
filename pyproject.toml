@@ -1,6 +1,66 @@
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools>=42"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "relattrs"
+version = "0.0.5"
+description = "Toolkit for working with nth order relational attributes in Python classes."
+readme = "README.rst"
+license = { text = "MIT" }
+authors = [
+    { name = "Sergio Rodríguez", email = "srodriguez3441@gmail.com" },
+]
+maintainers = [
+    { name = "Sergio Rodríguez", email = "srodriguez3441@gmail.com" },
+]
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.7"
+
+[project.optional-dependencies]
+dev = [
+    "build",
+    "pre-commit",
+    "pytest",
+    "pytest-cov",
+    "ruff",
+    "tox",
+    "twine",
+]
+
+[project.urls]
+Homepage = "https://github.com/nibblex/python-relattrs"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.pytest.ini_options]
+python_files = ["tests.py", "test_*.py", "*_tests.py"]
+pythonpath = [".", "relattrs"]
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+env_list = py{313,312,311,310,39,38,37}
+
+[testenv]
+deps = pytest
+commands = pytest -q
+"""
 
 [tool.ruff]
 line-length = 88
