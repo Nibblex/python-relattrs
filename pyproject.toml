@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "relattrs"
-version = "0.0.5"
+version = "1.0.0"
 description = "Toolkit for working with nth order relational attributes in Python classes."
 readme = "README.rst"
 license = { text = "MIT" }

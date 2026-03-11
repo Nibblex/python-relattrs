@@ -2,7 +2,7 @@ from functools import reduce
 from typing import Any, Optional
 
 
-def rgetattr(obj: object, rattr: str, *default, sep: Optional[str] = None) -> Any:
+def rgetattr(obj: object, rattr: str, /, *default, sep: Optional[str] = None) -> Any:
     """
     Recursively gets an attribute from an object based on a dotted string representation.
 
@@ -39,7 +39,7 @@ def rgetattr(obj: object, rattr: str, *default, sep: Optional[str] = None) -> An
     return reduce(getattr, rattr, obj)
 
 
-def rhasattr(obj: object, rattr: str, sep: Optional[str] = None) -> bool:
+def rhasattr(obj: object, rattr: str, /, *, sep: Optional[str] = None) -> bool:
     """
     Recursively checks if an object has an attribute based on a dotted string representation.
 
@@ -65,11 +65,16 @@ def rhasattr(obj: object, rattr: str, sep: Optional[str] = None) -> bool:
     """
 
     rattr = rattr.split(sep or ".")
-    obj = reduce(getattr, rattr[:-1], obj)
-    return hasattr(obj, rattr[-1])
+    try:
+        obj = reduce(getattr, rattr[:-1], obj)
+        return hasattr(obj, rattr[-1])
+    except AttributeError:
+        return False
 
 
-def rsetattr(obj: object, rattr: str, val: Any, sep: Optional[str] = None) -> None:
+def rsetattr(
+    obj: object, rattr: str, val: Any, /, *, sep: Optional[str] = None
+) -> None:
     """
     Recursively sets an attribute on an object based on a dotted string representation.
 
@@ -96,7 +101,7 @@ def rsetattr(obj: object, rattr: str, val: Any, sep: Optional[str] = None) -> No
     setattr(obj, rattr[-1], val)
 
 
-def rdelattr(obj: object, rattr: str, sep: Optional[str] = None) -> None:
+def rdelattr(obj: object, rattr: str, /, *, sep: Optional[str] = None) -> None:
     """
     Recursively deletes an attribute from an object based on a dotted string representation.
 
