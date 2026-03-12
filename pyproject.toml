@@ -6,14 +6,15 @@ build-backend = "setuptools.build_meta"
 name = "relattrs"
 version = "1.0.0"
 description = "Toolkit for working with nth order relational attributes in Python classes."
-readme = "README.rst"
-license = { text = "MIT" }
+readme = {file = "README.rst", content-type = "text/x-rst"}
+license = {text = "MIT"}
 authors = [
-    { name = "Sergio Rodríguez", email = "srodriguez3441@gmail.com" },
+    {name = "Sergio Rodríguez", email = "srodriguez3441@gmail.com"},
 ]
 maintainers = [
-    { name = "Sergio Rodríguez", email = "srodriguez3441@gmail.com" },
+    {name = "Sergio Rodríguez", email = "srodriguez3441@gmail.com"},
 ]
+requires-python = ">=3.8"
 classifiers = [
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
@@ -28,7 +29,6 @@ classifiers = [
     "Programming Language :: Python :: 3.14",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
-requires-python = ">=3.8"
 
 [project.optional-dependencies]
 dev = [
