@@ -32,7 +32,7 @@ jobs:
           pip install .[dev]
 
       - name: Run tox
-        run: tox -q -p auto
+        run: tox -q -e py$(echo ${{ matrix.python-version }} | tr -d .)
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v5
