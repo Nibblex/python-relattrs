@@ -53,14 +53,13 @@ pythonpath = [".", "relattrs"]
 filterwarnings = ["ignore::DeprecationWarning"]
 
 [tool.tox]
-legacy_tox_ini = """
-[tox]
-env_list = py{314,313,312,311,310,39,38}
+envlist = ["py38", "py39", "py310", "py311", "py312", "py313", "py314"]
 
-[testenv]
-deps = pytest
-commands = pytest -q
-"""
+[tool.tox.env_run_base]
+deps = ["pytest", "pytest-cov"]
+commands = [
+    ["pytest", "-q", "--cov", "--cov-report=xml"]
+]
 
 [tool.ruff]
 line-length = 88
