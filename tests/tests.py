@@ -53,6 +53,11 @@ def test_rgetattr(container, sep, attr_path, expected):
         assert rgetattr(container, attr_path, sep=sep) == expected
 
 
+def test_rgetattr_multiple_defaults_raises(container):
+    with pytest.raises(TypeError):
+        rgetattr(container, "non_existent", "default1", "default2")
+
+
 @pytest.mark.parametrize("sep", separators)
 @pytest.mark.parametrize(
     ("attr_path", "expected"),
