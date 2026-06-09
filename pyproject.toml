@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "relattrs"
-version = "1.0.0"
+version = "1.1.0"
 description = "Toolkit for working with nth order relational attributes in Python classes."
 readme = {file = "README.rst", content-type = "text/x-rst"}
 license = {text = "MIT"}
@@ -47,10 +47,13 @@ Homepage = "https://github.com/nibblex/python-relattrs"
 [tool.setuptools]
 include-package-data = true
 
+[tool.setuptools.package-data]
+relattrs = ["py.typed"]
+
 [tool.pytest.ini_options]
 python_files = ["tests.py", "test_*.py", "*_tests.py"]
-pythonpath = [".", "relattrs"]
-filterwarnings = ["ignore::DeprecationWarning"]
+pythonpath = ["."]
+addopts = "--doctest-modules"
 
 [tool.tox]
 envlist = ["py38", "py39", "py310", "py311", "py312", "py313", "py314"]
@@ -66,4 +69,4 @@ line-length = 88
 indent-width = 4
 
 [tool.ruff.lint]
-select = ["I"]
+select = ["E", "F", "W", "I", "UP", "B"]
